@@ -1,0 +1,12 @@
+.PokemonList{
+    margin-top:70px;
+}
+
+.Name{
+    text-transform: capitalize;
+}
+
+.Error{
+    color:red;
+    text-align: center;
+}
