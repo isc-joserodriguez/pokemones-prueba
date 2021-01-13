@@ -18,3 +18,7 @@
     background-color: #ccc;
     padding: 5px;
 }
+
+.Capitalize{
+    text-transform: capitalize;
+}

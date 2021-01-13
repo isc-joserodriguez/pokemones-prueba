@@ -16,11 +16,11 @@ const Modal = (props) => {
                 <h3>Stats:</h3>
                 <ul>
                     <li>
-                        height: {props.height}
+                        Height: {props.height}
                     </li>
                     {props.stats.map((stat, id) => {
                         return <li key={'stat' + id}>
-                            {`${stat.stat.name}: ${stat.base_stat}`}
+                            <span className={classes.Capitalize}>{stat.stat.name}</span>{`: ${stat.base_stat}`}
                         </li>
                     })}
                     {props.types.map((type, id) => {
@@ -29,11 +29,11 @@ const Modal = (props) => {
                             {`Type: ${type.type.name}`}
                         </li>
                     })}
+                </ul>
                     <div>
                         <img src={props.front_default} height="50%" alt="Front" />
                         <img src={props.back_default} height="25%" alt="Back" />
                     </div>
-                </ul>
             </div>
         </React.Fragment>
 
