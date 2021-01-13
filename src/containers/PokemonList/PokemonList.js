@@ -4,7 +4,8 @@ import axios from 'axios';
 import { Table, InputGroup, FormControl, Container, Button } from 'react-bootstrap';
 
 import classes from './PokemonList.module.css';
-import Modal from '../../components/UI/Modal/Modal'
+import Modal from '../../components/UI/Modal/Modal';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 class PokemonList extends Component {
     state = {
@@ -18,12 +19,13 @@ class PokemonList extends Component {
             stats: [],
             types: []
         },
-        showModal: false
+        showModal: false,
+        charged: false
     }
 
     componentDidMount() {
         axios.get('https://pokeapi.co/api/v2/pokemon?limit=151').then(res => {
-            this.setState({ pokeList: res.data.results, originalList: res.data.results })
+            this.setState({ pokeList: res.data.results, originalList: res.data.results, charged: true })
         });
     }
 
@@ -44,7 +46,7 @@ class PokemonList extends Component {
                     stats: res.data.stats,
                     types: res.data.types
                 },
-                showModal: !this.state.showModal
+                showModal: true
             })
         });
     }
@@ -122,7 +124,9 @@ class PokemonList extends Component {
                     types={this.state.detailPokemon.types}
                     back_default={this.state.detailPokemon.back_default}
                     front_default={this.state.detailPokemon.front_default} />
-                {list}
+                {
+                    (!this.state.charged) ? <Spinner/> :  list
+                }
             </Container>
         )
     }
