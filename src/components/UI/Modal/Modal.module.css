@@ -25,10 +25,33 @@
 }
 
 .Modal img{
-    width: 25%;
+    width: 50%;
 }
 
 .Stat{
     color:red;
     text-transform: capitalize;
+}
+
+@media (max-width: 600px) {
+    .Modal{
+        top: 10%;
+        left:15%;
+        width: 70%;
+    }
+    .Name{
+        font-size: 1.5rem;
+    }
+    
+    .Capitalize{
+        font-size: .8rem;
+    }
+
+    .Stat{
+        font-size: .9rem;
+    }
+    
+    .Modal img{
+        width: 50%;
+    }
 }
