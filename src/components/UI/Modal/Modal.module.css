@@ -4,6 +4,7 @@
     background-color: white;
     width: 50%;
     border: 1px solid #ccc;
+    border-radius: 10px;
     box-shadow: 1px 1px 1px black;
     padding: 16px;
     left: 25%;
@@ -15,10 +16,19 @@
 .Name{
     text-transform: capitalize;
     text-align: center;
-    background-color: #ccc;
+    background-color: #859aff;
     padding: 5px;
 }
 
 .Capitalize{
+    text-transform: capitalize;
+}
+
+.Modal img{
+    width: 25%;
+}
+
+.Stat{
+    color:red;
     text-transform: capitalize;
 }
